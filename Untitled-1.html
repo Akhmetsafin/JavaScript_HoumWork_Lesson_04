@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let interNum = Number(prompt("Ведите число не более чем 999"));
+        let hundreds, ten, units;
+
+
+        if (Number.isInteger(interNum)) {
+            hundreds = Math.floor(interNum / 100);
+            ten = Math.floor(interNum % 100 / 10);
+            units = Math.floor(interNum % 100 % 10);
+            document.writeln(`hundreds: ` + hundreds);
+            document.write('<br/>')
+            document.writeln(`ten: ` + ten);
+            document.write('<br/>')
+            document.writeln(`units: ` + units);
+            // console.log(`hundreds: ` + hundreds);
+        }
+    </script>
+
+</body>
+
+</html>
