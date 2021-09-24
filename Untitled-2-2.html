@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+        let RealPrice = 320;
+        let Discont = 55;
+        let nameFood = "Купаты";
+        class Product {
+            constructor(name, realPrice, discont) {
+                this.name = name;
+                this.realPrice = realPrice;
+                this.price = this.realPrice;
+                this.discont = discont;
+
+            }
+
+            makeUserPercentDiscount() {
+                this.price = this.price - (this.price * this.discont / 100);
+            }
+        }
+
+        const product1 = new Product(nameFood, RealPrice, Discont);
+        product1.makeUserPercentDiscount();
+
+        console.log(product1);
+    </script>
+</body>
+
+</html>
