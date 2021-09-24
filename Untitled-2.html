@@ -12,24 +12,27 @@
     <script>
         'use strict';
         let Discount = 25;
-        let realPrice = 250;
-        let productName = `Пельмение "Татышлинские" за 1кг`;
+        let PriceNoDiscount = 250;
+        let productName = `Пельмение "Татышлинские самолепные" за 1кг`;
 
-        function ProductMy(name, price) {
+        function ProductMy(name, price, discount, priceNoDiscount) {
             this.name = name;
-            this.price = price;
+            this.priceNoDiscount = price;
+            this.price = this.priceNoDiscount;
+
+            this.discount = discount;
         }
 
         ProductMy.prototype.percentDiscount = function() {
-            this.price = this.price - (this.price * Discount / 100);
+            this.price = this.price - (this.price * this.discount / 100);
         };
 
-        const product1 = new ProductMy(productName, realPrice);
-        product1.percentDiscount();
+        const foodProducts = new ProductMy(productName, PriceNoDiscount, Discount);
+        foodProducts.percentDiscount();
 
-        console.log(product1);
-        document.writeln(`${product1.name} с учетом скидки ${Discount}% = ${product1.price} рублей </br> 
-        ${product1.name} = ${realPrice} рублей`);
+        console.log(foodProducts);
+        document.writeln(`${foodProducts.name} с учетом скидки ${foodProducts.discount}% = ${foodProducts.price} рублей </br> 
+         ${foodProducts.name} = ${foodProducts.priceNoDiscount} рублей`);
     </script>
 
 </body>
