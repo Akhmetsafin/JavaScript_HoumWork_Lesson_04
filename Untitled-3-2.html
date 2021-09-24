@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        class BHA {
+            constructor(Label, Length, dateMakeUpBHA) {
+                this.Label = Label;
+                this.Length = Length;
+                this.dateMakeUpBHA = dateMakeUpBHA;
+            }
+
+            edit(Label, Length) {
+                this.Length = Length;
+                this.Label = Label;
+            }
+        }
+
+        const BHA1 = new BHA('Rudius Services', '55.2м', new Date());
+        console.log(BHA1);
+        BHA1.edit('ДРУ-240', '45,6м');
+        console.log(BHA1);
+
+        class AttachedPost extends BHA {
+            constructor(Label, Length, dateMakeUpBHA) {
+                super(Label, Length, dateMakeUpBHA);
+                this.testBHA = false;
+            }
+
+            makeTextHighlighted() {
+                this.testBHA = true;
+            }
+        }
+
+        const preRun01 = new AttachedPost('Rudius Services', '45.3м', new Date());
+        console.log(preRun01);
+        preRun01.makeTextHighlighted();
+        preRun01.edit('Burintech', "41.0м");
+        console.log(preRun01);
+    </script>
+
+</body>
+
+</html>
